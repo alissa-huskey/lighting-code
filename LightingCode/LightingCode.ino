@@ -23,7 +23,7 @@ TBlendType    currentBlending;
 
 CRGB led[NUM];
 
-LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 20, 4); // Change to (0x27,16,2) for 16x2 LCD.
+LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 20, 4); // Change to (0x27, 16, 2) for 16x2 LCD.
 
 void setup() {
   FastLED.addLeds<NEOPIXEL, PIN>(led, NUM);
@@ -106,7 +106,7 @@ void loop() {
     if (digitalRead(8) == HIGH) { // STATIONARY
       Serial.print("HELLO");
       for (int i = 0; i < NUM; i++) {
-         led[i] = CRGB(one,two,three);
+         led[i] = CRGB(one, two, three);
       }
       FastLED.show();
     }
@@ -122,14 +122,14 @@ void loop() {
       }
 
       for (int i = 0; i < NUM; i++) {
-        led[i] = CRGB(one,two,three);
+        led[i] = CRGB(one, two, three);
       }
 
       FastLED.show();
       delay(speed);
 
       for (int i = 0; i < NUM; i++) {
-        led[i] = CRGB(0,0,0);
+        led[i] = CRGB(0, 0, 0);
       }
 
       FastLED.show();
@@ -172,7 +172,7 @@ void loop() {
 
     if (digitalRead(11) == HIGH) { // CHASE
       for (int i = 0; i < NUM; i++) {
-        led[i] = CRGB(one,two,three);
+        led[i] = CRGB(one, two, three);
         FastLED.show();
         led[i] = CRGB::Black;
         delay(speed);
@@ -258,15 +258,15 @@ void loop() {
 void setColour(int val) {
     for (int i = 0; i < NUM; i++) {
       if (one > 0) {
-        led[i] = CRGB(val,0,0);
+        led[i] = CRGB(val, 0, 0);
       }
 
       if (two > 0) {
-        led[i] = CRGB(0,val,0);
+        led[i] = CRGB(0, val, 0);
       }
 
       if (three > 0) {
-        led[i] = CRGB(0,0,val);
+        led[i] = CRGB(0, 0, val);
       }
     }
 
@@ -290,7 +290,7 @@ void pride() {
   uint16_t deltams = ms - sLastMillis ;
   sLastMillis  = ms;
   sPseudotime += deltams * msmultiplier;
-  sHue16 += deltams * beatsin88(400, 5,9);
+  sHue16 += deltams * beatsin88(400, 5, 9);
   uint16_t brightnesstheta16 = sPseudotime;
 
   for(uint16_t i = 0 ; i < NUM; i++) {
