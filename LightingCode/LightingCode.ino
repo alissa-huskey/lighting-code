@@ -18,18 +18,6 @@ int two = 0;
 int three = 0;
 int speed = 20;
 
-//  0: main menu
-// 11: BLUE
-// 12: GREEN
-// 13: RED
-//  4: OTHER Menu
-// >10: Effect menu
-// >10: Effect menu
-// 14: PARTY
-// 15: OCEAN
-// 16: PARADISE
-// 17: CLOUDY
-
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 
